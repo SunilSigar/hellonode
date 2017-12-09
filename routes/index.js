@@ -2,7 +2,7 @@ var express = require('express');
 var mongoose = require('mongoose');
 var router = express.Router();
 
-mongoose.connect('mongodb://localhost/test');
+mongoose.connect('mongodb://sunilsigar:vfr4m5tgb@ds133816.mlab.com:33816/userlikes');
 
 var mySchema = mongoose.Schema({
     icecream: String,
