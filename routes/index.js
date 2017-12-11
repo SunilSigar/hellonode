@@ -27,9 +27,19 @@ router.get('/ilike/:icecream/:name', function(req, res) {
   choiceModel.find({},function(err, savedData){
     res.send(savedData); 
   });
-  
 });
 
+router.post('/data', function(req, res) {
+  var newChoice = new choiceModel();
+  newChoice.icecream = req.params.icecream;
+  newChoice.name = req.params.name;
+  newChoice.save(function(err, savedData){
+    // res.send(savedData); 
+  });
+  choiceModel.find({},function(err, savedData){
+    res.send(savedData); 
+  });
+});
 
 // router.get('/healthcheck', function(req, res) {
 //   var resObj = {msg: "ok"};
